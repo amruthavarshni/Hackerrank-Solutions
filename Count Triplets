@@ -1,0 +1,26 @@
+package test_package;
+import java.util.*;
+class Tripl{
+	public long same(List<Long>a,long r) {
+		HashMap<Long,Long>pre=new HashMap<Long,Long>();
+		HashMap<Long,Long>next=new HashMap<Long,Long>();
+		for(long i:a) {
+			next.put(i,next.getOrDefault(i,0L)+1);
+		}
+		long c=0;
+		for(int i=0;i<a.size();i++) {
+			long curr=a.get(i);
+			long c1=0,c2=0;
+			next.put(curr, next.getOrDefault(curr,0L)-1);
+			if(pre.containsKey(curr/r) && curr%r==0)
+				c1=pre.get(curr/r);
+			if(next.containsKey(curr*r))
+				c2=next.get(curr*r);
+			c=c+(c1*c2);
+			pre.put(curr, pre.getOrDefault(curr, 0L)+1);
+		}
+		return c;
+		
+		
+	}
+}
