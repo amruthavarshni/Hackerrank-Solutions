@@ -1,0 +1,33 @@
+package test_package;
+import java.util.*;
+class Main{
+	public int check(String a,String b) {
+		int c=0;
+		int c1[]=new int[26];
+		int c2[]=new int[26];
+		for(int i=0;i<a.length();i++)
+			c1[a.charAt(i)-97]++;
+		for(int j=0;j<b.length();j++)
+			c2[b.charAt(j)-97]++;
+		for(int i=0;i<26;i++) {
+			c=c+Math.abs(c1[i]-c2[i]);
+		}
+		return c;
+			
+			
+	}
+}
+
+public class anagram {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String a=sc.next();
+		String b=sc.next();
+		Main obj=new Main();
+		System.out.print(obj.check(a, b));
+
+	}
+
+}
