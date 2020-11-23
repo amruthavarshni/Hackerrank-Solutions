@@ -1,0 +1,48 @@
+package test_package;
+import java.util.*;
+
+public class twoOperations {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int a[]=new int[n];
+		int b[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			a[i]=sc.nextInt();
+		    int c=0,num=0;
+		    while(true)
+		    {
+		    	if(num==0)
+		    	{
+		    		num=num+1;
+		    		c++;
+		    	}
+		    	else if(num*2<=a[i])
+		    	{
+		    		num=num*2;
+		    		c++;
+		    	}
+		    	else {
+		    		num=num+1;
+		    		c++;
+		    	}
+		    	if(num==a[i]) {
+		    		b[i]=c;
+		    		break;
+		    	}
+		    		
+		    	}
+		    }
+		    for(int i=0;i<n;i++)
+		    {
+		    	System.out.println(b[i]);
+		    }
+		
+		
+
+	}
+
+}
